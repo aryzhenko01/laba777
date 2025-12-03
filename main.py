@@ -19,15 +19,17 @@ matr=[]
 for i in range(f):
     elem=[]
     for j in range(t):
-        elem.append(random.randint(0,100))
+        elem.append(random.randint(-100,100))
     matr.append(elem)
 print('Полученный список ',matr)
 
+sum=[]
 for i in range(len(matr)):
-    sum=[]
+    total=0
     for j in range(len(matr[i])):
         if matr[i][j]%2==0 and matr[i][j]>0:
-            sum.append(matr[i][j])
+            total+=matr[i][j]
+    sum.append(total)
 
 v=[]
 for i in range(len(sum)):
@@ -35,6 +37,7 @@ for i in range(len(sum)):
         if sum[i] < sum[j]:
             sum[i], sum[j] = sum[j], sum[i]
             matr[i], matr[j] =  matr[j], matr[i]
-print(sum)
-print(matr)
+print('Матрица по убыванию характеристик', matr)
+print('Характеристики строк: ', sum)
+
 
