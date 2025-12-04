@@ -9,19 +9,25 @@ def check(i):
                 print('Введенное число некорректно. Число должно быть больше 0.')
         except ValueError:
             print('Вы ввели не число')
+def print_matr(x):
+    for row in x:
+        for elem in row:
+            print(f" {elem:5}", end=' ')
+        print()
 
-f = check('Введите количество строк списка: ')
-t = check('Введите количество элементов строки: ')
-print(f"Размер матрицы: {f}x{t}")
+
+f = check('Введите размерность матрицы: ')
+print(f"Размер матрицы: {f}x{f}")
 
 
 matr=[]
 for i in range(f):
     elem=[]
-    for j in range(t):
+    for j in range(f):
         elem.append(random.randint(-100,100))
     matr.append(elem)
-print('Полученный список ',matr)
+print('Полученная матрица:')
+print_matr(matr)
 
 sum=[]
 for i in range(len(matr)):
@@ -37,7 +43,17 @@ for i in range(len(sum)):
         if sum[i] < sum[j]:
             sum[i], sum[j] = sum[j], sum[i]
             matr[i], matr[j] =  matr[j], matr[i]
-print('Матрица по убыванию характеристик', matr)
+
+#print('Полученная матрица:')
+#for row in matr:
+   # for elem in row:
+        #print(f" {elem:4}", end=' ')
+    #print()
+
+
+print('Матрица по убыванию характеристик')
+print_matr(matr)
+
 print('Характеристики строк: ', sum)
 
 
