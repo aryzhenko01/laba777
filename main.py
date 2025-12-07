@@ -9,6 +9,8 @@ def check(i):
                 print('Введенное число некорректно. Число должно быть больше 0.')
         except ValueError:
             print('Вы ввели не число')
+
+
 def print_matr(x):
     for row in x:
         for elem in row:
@@ -43,13 +45,6 @@ for i in range(len(sum)):
         if sum[i] < sum[j]:
             sum[i], sum[j] = sum[j], sum[i]
             matr[i], matr[j] =  matr[j], matr[i]
-
-#print('Полученная матрица:')
-#for row in matr:
-   # for elem in row:
-        #print(f" {elem:4}", end=' ')
-    #print()
-
 
 print('Матрица по убыванию характеристик')
 print_matr(matr)
